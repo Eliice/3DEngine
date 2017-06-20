@@ -1,0 +1,349 @@
+#include <QGroupBox>
+#include <qfiledialog.h>
+#include <QRadioButton>
+#include <QTabWidget>
+#include <qdirmodel.h>
+#include <QFileSystemModel>
+#include <QTimer>
+
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "System.h"
+
+
+MainWindow::MainWindow() :
+    QMainWindow(),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+	Initialize();
+
+	Exitdialog = new ExitDialog(this);
+	Exitdialog->hide();
+	
+	currentSceneName = "DefaultScene";
+
+	m_Scene = SCENE_MANAGER->GetScene(currentSceneName);
+
+    connect(Component->GetPushButton(), SIGNAL(clicked()), this, SLOT(OpenComponent()));
+	connect(Exitdialog->GetSaveButton(), SIGNAL(clicked()), this, SLOT(Save()));
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+
+	Shutdown();
+
+    delete Exitdialog;
+}
+
+void MainWindow::on_actionNew_Scene_triggered()
+{
+	ui->ListHierarchy->clear();
+	RemoveItemOfLayout(ui->InspectorLayout);
+	ResetObjectNb();
+	SCENE_MANAGER->RemoveAllScenes();
+	m_Scene->Destroy();
+	m_Scene = SCENE_MANAGER->AddScene("New Scene", true);	
+}
+
+void MainWindow::Save()
+{
+	SERIALIZER->Save(m_Scene, "../../../../Documents/" + currentProject.toStdString() + "/Scenes/" + currentSceneName + ".json");
+}
+
+void MainWindow::on_actionExit_triggered()
+{ 
+    Exitdialog->show();
+}
+
+void MainWindow::on_actionCube_triggered()
+{
+	SceneNode* cube = m_Scene->AddMeshNode("EngineCube");
+	
+	if ( cubeNb != 0)
+    {
+		m_CurrentName = "Cube " + QString::number(cubeNb);
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    else
+    {
+		m_CurrentName = "Cube ";
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+	cubeNb++;
+	UpdatePosition(cube);
+}
+
+void MainWindow::on_actionSphere_triggered()
+{
+	SceneNode* sphere = m_Scene->AddSphereNode();
+    if ( sphereNb != 0)
+    {
+		m_CurrentName = "Sphere " + QString::number(sphereNb);
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    else
+    {
+		m_CurrentName = "Sphere ";
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    sphereNb++;
+	UpdatePosition(sphere);
+}
+
+void MainWindow::on_actionCapsule_triggered()
+{
+	SceneNode* capsule = m_Scene->AddCapsuleNode();
+    if ( capsuleNb != 0)
+    {
+		m_CurrentName = "Capsule " + QString::number(capsuleNb);
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    else
+    {
+		m_CurrentName = "Capsule ";
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    capsuleNb++;
+	UpdatePosition(capsule);
+}
+
+void MainWindow::on_ListHierarchy_clicked()
+{
+	RemoveItemOfLayout(ui->InspectorLayout);
+	
+	ui->InspectorLayout->addWidget(Transformdialog);
+	Transformdialog->GetTransformText(ui->ListHierarchy->currentItem()->text());
+    ui->InspectorLayout->addWidget(Positiondialog);
+
+    ui->InspectorLayout->addWidget(Component);
+}
+
+void MainWindow::on_actionCamera_triggered()
+{
+    if ( cameraNb != 0)
+    {
+        m_CurrentName = "Camera " + QString::number(cameraNb);
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    else
+    {
+        m_CurrentName = "Camera ";
+        ui->ListHierarchy->addItem(m_CurrentName);
+    }
+    cameraNb++;
+}
+
+void MainWindow::UpdatePosition(SceneNode * object)
+{
+	component::Transform* position = object->GetTransform();
+	Positiondialog->GetPosition(position->getTranslate(), position->getRotate(), position->getScale());
+}
+
+void MainWindow::RemoveItemOfLayout(QLayout* l)
+{
+	QLayoutItem* item;
+	while (item = l->takeAt(0))
+	{
+		QWidget* widget = item->widget();
+
+		if (item->layout())
+			RemoveItemOfLayout(item->layout());
+			
+		if (widget)
+			delete widget;
+	}
+}
+
+void MainWindow::ResetObjectNb()
+{
+	cubeNb = 0;
+	sphereNb = 0;
+	capsuleNb = 0;
+	cameraNb = 0;
+}
+
+void MainWindow::Initialize()
+{
+	m_QtSystem = new QtSystem();
+
+	Transformdialog = new Transform();
+	Positiondialog = new Position();
+	Component = new AddComponentFont();
+	Colliderdialog = new Collider();
+
+	CubeColliderdialog = new CubeCollider();
+	CapsuleColliderdialog = new CapsuleCollider();
+	SphereColliderdialog = new SphereCollider();
+
+	InitRepository();
+	InitArbo();
+}
+
+void MainWindow::OpenComponent()
+{
+	ui->InspectorLayout->addWidget(Colliderdialog);
+
+}
+
+void MainWindow::InitArbo()
+{
+	QFileSystemModel* model = new QFileSystemModel();
+	model->setRootPath(QDir::currentPath());
+
+	ui->Arbo->setModel(model);
+	ui->Arbo->setRootIndex(model->index("../../../../Documents/" + currentProject));
+}
+
+void MainWindow::InitRepository()
+{
+	QDir* dir = new QDir();
+	dir->setPath("../../../../Documents/");
+	
+	dir->mkdir(currentProject);
+	dir->mkdir(currentProject + "/Scenes");
+	dir->mkdir(currentProject + "/Scripts");
+}
+
+void MainWindow::Shutdown()
+{
+	delete Transformdialog;
+	delete Positiondialog;
+	delete Component;
+
+	delete CubeColliderdialog;
+	delete CapsuleColliderdialog;
+	delete SphereColliderdialog;
+}
+
+void MainWindow::SelectCollider()
+{
+    if(ui->ListHierarchy->currentItem()->text().contains("Cube"))
+    {
+        ui->InspectorLayout->removeWidget(CubeColliderdialog);
+        ui->InspectorLayout->removeWidget(SphereColliderdialog);
+        ui->InspectorLayout->removeWidget(CapsuleColliderdialog);
+
+        ui->InspectorLayout->addWidget(CubeColliderdialog);
+    }
+
+    if(ui->ListHierarchy->currentItem()->text().contains("Sphere"))
+    {
+        ui->InspectorLayout->removeWidget(SphereColliderdialog);
+        ui->InspectorLayout->removeWidget(CubeColliderdialog);
+        ui->InspectorLayout->removeWidget(CapsuleColliderdialog);
+
+        ui->InspectorLayout->addWidget(SphereColliderdialog);
+    }
+
+    if(ui->ListHierarchy->currentItem()->text().contains("Capsule"))
+    {
+        ui->InspectorLayout->removeWidget(CapsuleColliderdialog);
+        ui->InspectorLayout->removeWidget(CubeColliderdialog);
+        ui->InspectorLayout->removeWidget(SphereColliderdialog);
+
+        ui->InspectorLayout->addWidget(CapsuleColliderdialog);
+    }
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+	SERIALIZER->Save(m_Scene, "../../../../Documents/" + currentProject.toStdString() + "/Scenes/" + currentSceneName + ".json");
+}
+
+void MainWindow::on_actionSave_as_triggered()
+{
+	QString filename = QFileDialog::getSaveFileName(this, "Save file", "../../../../Documents/" + currentProject + "/Scenes/" + currentProject, "*.json");
+
+	if ( filename != nullptr)
+		SERIALIZER->Save(m_Scene, filename.toStdString());
+}
+
+void MainWindow::on_actionOpen_Scene_triggered()
+{
+	QString filename = QFileDialog::getOpenFileName(this, "Open file", "../../../../Documents/" + currentProject + "/Scenes/" + currentProject, "*.json");
+
+	if (filename != nullptr)
+	{
+		m_Scene->Destroy();
+		m_Scene = SERIALIZER->Deserialize(filename.toStdString());
+	}
+}
+
+void MainWindow::on_actionNew_Project_triggered()
+{
+	QString filename = QFileDialog::getSaveFileName(this, "New Project", "../../../../Documents/");
+	QDir dir = QDir::root();
+	
+	if (filename != nullptr)
+	{
+		dir.mkdir(filename);
+		dir.mkdir(filename + "/Scenes/");
+		dir.mkdir(filename + "/Scripts/");
+		currentProject = filename;
+	}
+}
+
+void MainWindow::on_actionFolder_triggered()
+{
+	QString filename = QFileDialog::getSaveFileName(this, "New Directory", "../../../../Documents/" + currentProject);
+	QDir dir = QDir::root();
+
+	if ( filename != nullptr)
+		dir.mkdir(filename);
+}
+
+void MainWindow::on_actionC_Scripts_triggered()
+{
+	QString filename = QFileDialog::getSaveFileName(this, "New Directory", "../../../../Documents/" + currentProject + "/Scripts/");
+	QFile h(filename + ".h");
+	QFile cpp(filename + ".cpp");
+
+	if (h.open(QIODevice::ReadWrite))
+	{
+		filename = h.readAll();
+		h.close();
+	}
+	
+	if (cpp.open(QIODevice::ReadWrite))
+	{
+		filename = cpp.readAll();
+		cpp.close();
+	}
+}
+
+void MainWindow::on_Play_clicked()
+{
+	QFile file("../ModelViewer/Saves/autosave.json");
+
+	if (isPressed == true)
+	{
+		SERIALIZER->Save(m_Scene, "../ModelViewer/Saves/autosave.json");
+		m_QtSystem->StartSimulation();
+		ui->Play->setText("Stop");
+		isPressed = false;
+	}
+	else
+	{
+		m_Scene->Destroy();
+		SCENE_MANAGER->GetScene(currentSceneName)->GetRoot()->Destroy();
+		m_QtSystem->StopSimulation();
+		m_Scene = SERIALIZER->Deserialize("../ModelViewer/Saves/autosave.json");
+		file.remove();
+		ui->Play->setText("Play");
+		isPressed = true;
+	}
+}
+
+void MainWindow::on_Pause_clicked()
+{
+    if( isPressed == true)
+        m_QtSystem->StopSimulation();
+}
+
+void MainWindow::on_ListHierarchy_clicked(const QModelIndex &index)
+{
+    
+}

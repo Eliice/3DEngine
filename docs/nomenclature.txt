@@ -1,0 +1,43 @@
+type nomDeVariable
+auto NomDeMethode()->type
+nomdenamespace  court mais explicite ( 3 - 4 lettres max )
+1 namespace = 1 dossier
+
+VALUE_OF_AN_ENUM
+
+nom de fichier =  nom de class 
+const partout ou cela est necessaire.
+class stock pointeur sur type non standard
+
+// for H
+
+include <standard>
+include "custom"
+
+// for CPP
+
+include "file.h"
+
+include <standard>
+include "custom"
+
+//TODO: futur implementation
+//HACKS: fonctionnelle mais doit etre ameliorer
+
+singleton -> unique_ptr
+
+// getter effectuer dans le point h cas global
+
+GetX() { return x ;}
+
+variable de class private => getter
+setter avec check valeur d'entre si possible.
+
+shader.vs
+shader.frag
+
+variable appartenant a la fontion : m_varName
+
+utilisation de service pour fonction usuelle non associer a une class ( log, parse file etc...)
+
+this a bannir pour variable interne.

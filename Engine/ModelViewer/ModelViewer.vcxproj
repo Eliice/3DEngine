@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Component\BasicShader.cpp" />
+    <ClCompile Include="src\Component\Collider.cpp" />
+    <ClCompile Include="src\Component\Component.cpp" />
+    <ClCompile Include="Src\Component\ComponentElement\Material.cpp" />
+    <ClCompile Include="src\Component\Mesh.cpp" />
+    <ClCompile Include="Src\Component\RenderCache.cpp" />
+    <ClCompile Include="src\Component\Renderer.cpp" />
+    <ClCompile Include="src\Component\Texture.cpp" />
+    <ClCompile Include="src\Component\Transform.cpp" />
+    <ClCompile Include="src\Helpers\GlewHelper.cpp" />
+    <ClCompile Include="src\Helpers\GlutHelper.cpp" />
+    <ClCompile Include="Src\Helpers\SDLHelper.cpp" />
+    <ClCompile Include="Src\Helpers\STBIHelper.cpp" />
+    <ClCompile Include="Src\Libraries\GLRenderLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\GLTextureLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\InputLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\Library.cpp" />
+    <ClCompile Include="Src\Libraries\OpenGLLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\RenderLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\SDLLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\SDLPollEventLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\SDLWindow.cpp" />
+    <ClCompile Include="Src\Libraries\TextureLibrary.cpp" />
+    <ClCompile Include="src\Scene\Camera.cpp" />
+    <ClCompile Include="src\Scene\Scene.cpp" />
+    <ClCompile Include="src\Scene\SceneManager.cpp" />
+    <ClCompile Include="src\Scene\SceneNode.cpp" />
+    <ClCompile Include="src\Scene\Skybox.cpp" />
+    <ClCompile Include="src\Service\ErrorManager.cpp" />
+    <ClCompile Include="src\Service\FileLoader.cpp" />
+    <ClCompile Include="src\Service\InputManager.cpp" />
+    <ClCompile Include="Src\Service\LibraryManager.cpp" />
+    <ClCompile Include="src\Service\Log.cpp" />
+    <ClCompile Include="Src\Service\MeshObject.cpp" />
+    <ClCompile Include="src\Service\MeshStorage.cpp" />
+    <ClCompile Include="src\Service\PhysXWrapper.cpp" />
+    <ClCompile Include="Src\Service\Serializer.cpp" />
+    <ClCompile Include="src\Service\Service.cpp" />
+    <ClCompile Include="src\Service\ServiceLocator.cpp" />
+    <ClCompile Include="src\Service\TextureStorage.cpp" />
+    <ClCompile Include="src\Service\ThreadPool.cpp" />
+    <ClCompile Include="src\Service\Timer.cpp" />
+    <ClCompile Include="src\Service\TimerStorage.cpp" />
+    <ClCompile Include="src\Service\Window.cpp" />
+    <ClCompile Include="src\System.cpp" />
+    <ClCompile Include="src\Tools.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{37544375-0177-4771-8F9B-CABA09CB5480}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ModelViewer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <SourcePath>..\..\..\Engine\Engine\ModelViewer\src\Helpers;..\..\..\Engine\Engine\ModelViewer\src\Component;..\..\..\Engine\Engine\ModelViewer\src\Service;..\..\..\Engine\Engine\ModelViewer\src\Scene;..\..\..\Engine\Engine\ModelViewer\src\Plugins;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;DLL_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Math;..\..\libs;..\..\\libs\SDL\include;..\..\libs\freeglut\include;..\..\libs\glew-2.0.0\include;..\..\;..\..\libs\GL;Include;..\..\..\PhysX\PhysX_3.4\Include;..\..\..\PhysX\PxShared\include;$(USERPROFILE)\Documents\PhysX\PhysX_3.4\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\Math;..\..\libs;..\..\libs\SDL\lib\x64;..\..\libs\freeglut\lib\x64;..\..\libs\glew-2.0.0\lib\Release\x64;..\..\..\PhysX\PhysX_3.4\Lib\vc14win64;..\..\..\PhysX\PxShared\lib\vc14win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\libs\Math.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libcmt.lib;msvcrt.lib;libcd.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Math;..\..\libs;..\..\libs\SDL\include;..\..\libs\freeglut\include;..\..\libs\glew-2.0.0\include;..\..\;..\..\libs\GL;Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\Math;..\..\libs;..\..\libs\SDL\lib\x64;..\..\libs\freeglut\lib\x64;..\..\libs\glew-2.0.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\libs\Math.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Component\BasicShader.h" />
+    <ClInclude Include="Include\Component\Collider.h" />
+    <ClInclude Include="Include\Component\Component.h" />
+    <ClInclude Include="Include\Component\ComponentElement\Material.h" />
+    <ClInclude Include="Include\Component\ComponentType.h" />
+    <ClInclude Include="Include\Component\Mesh.h" />
+    <ClInclude Include="Include\Component\RenderCache.h" />
+    <ClInclude Include="Include\Component\renderer.h" />
+    <ClInclude Include="Include\Component\Texture.h" />
+    <ClInclude Include="Include\Component\Transform.h" />
+    <ClInclude Include="Include\DllExport.h" />
+    <ClInclude Include="Include\Helpers\FunctionBindHelper.h" />
+    <ClInclude Include="Include\Helpers\GlewHelper.h" />
+    <ClInclude Include="Include\Helpers\GlutHelper.h" />
+    <ClInclude Include="Include\Helpers\SDLHelper.h" />
+    <ClInclude Include="Include\Helpers\STBIHelper.h" />
+    <ClInclude Include="Include\Key.h" />
+    <ClInclude Include="Include\Libraries\GLRenderLibrary.h" />
+    <ClInclude Include="Include\Libraries\GLTextureLibrary.h" />
+    <ClInclude Include="Include\Libraries\InputLibrary.h" />
+    <ClInclude Include="Include\Libraries\Library.h" />
+    <ClInclude Include="Include\Libraries\OpenGLLibrary.h" />
+    <ClInclude Include="Include\Libraries\RenderLibrary.h" />
+    <ClInclude Include="Include\Libraries\SDLLibrary.h" />
+    <ClInclude Include="Include\Libraries\SDLPollEventLibrary.h" />
+    <ClInclude Include="Include\Libraries\SDLWindow.h" />
+    <ClInclude Include="Include\Libraries\TextureLibrary.h" />
+    <ClInclude Include="Include\Plugins\Event.h" />
+    <ClInclude Include="Include\Plugins\EventReceiver.h" />
+    <ClInclude Include="Include\Scene\camera.h" />
+    <ClInclude Include="Include\Scene\Scene.h" />
+    <ClInclude Include="Include\Scene\scenemanager.h" />
+    <ClInclude Include="Include\Scene\scenenode.h" />
+    <ClInclude Include="Include\Scene\Skybox.h" />
+    <ClInclude Include="Include\Service\ErrorManager.h" />
+    <ClInclude Include="Include\Service\FileLoader.h" />
+    <ClInclude Include="Include\Service\InputManager.h" />
+    <ClInclude Include="Include\Service\LibraryManager.h" />
+    <ClInclude Include="Include\Service\Log.h" />
+    <ClInclude Include="Include\Service\MeshObject.h" />
+    <ClInclude Include="Include\Service\meshstorage.h" />
+    <ClInclude Include="Include\Service\PhysXWrapper.h" />
+    <ClInclude Include="Include\Service\Serializer.h" />
+    <ClInclude Include="Include\Service\Service.h" />
+    <ClInclude Include="Include\Service\servicelocator.h" />
+    <ClInclude Include="Include\Service\ServiceType.h" />
+    <ClInclude Include="Include\Service\TextureStorage.h" />
+    <ClInclude Include="Include\Service\ThreadPool.h" />
+    <ClInclude Include="Include\Service\Timer.h" />
+    <ClInclude Include="Include\Service\TimerStorage.h" />
+    <ClInclude Include="Include\Service\Tools.h" />
+    <ClInclude Include="Include\system.h" />
+    <ClInclude Include="Include\window.h" />
+    <ClInclude Include="ShaderData\DragonData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShaderData\shader.frag" />
+    <None Include="ShaderData\shader.vs" />
+    <None Include="ShaderData\SkyboxLatLong.frag" />
+    <None Include="ShaderData\SkyboxLatLong.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

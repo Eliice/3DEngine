@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\BasicShader.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\Component.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\Mesh.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\Renderer.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\Texture.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\Transform.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helpers\GlewHelper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helpers\GlutHelper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Camera.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Scene.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SceneManager.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\SceneNode.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Scene\Skybox.cpp">
+      <Filter>Source Files\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\ErrorManager.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\FileLoader.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\InputManager.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\Log.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\MeshStorage.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\Service.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\ServiceLocator.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\TextureStorage.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\ThreadPool.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\Timer.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\TimerStorage.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\Window.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Component\ComponentElement\Material.cpp">
+      <Filter>Source Files\Component\ComponentElement</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Service\Serializer.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Helpers\SDLHelper.cpp">
+      <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Libraries\Library.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Service\LibraryManager.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Libraries\SDLLibrary.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Libraries\SDLPollEventLibrary.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Libraries\SDLWindow.cpp" />
+    <ClCompile Include="Src\Component\RenderCache.cpp" />
+    <ClCompile Include="Src\Helpers\STBIHelper.cpp" />
+    <ClCompile Include="Src\Libraries\TextureLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\OpenGLLibrary.cpp" />
+    <ClCompile Include="Src\Libraries\RenderLibrary.cpp" />
+    <ClCompile Include="Src\Service\MeshObject.cpp" />
+    <ClCompile Include="Src\Libraries\GLRenderLibrary.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Libraries\GLTextureLibrary.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Libraries\InputLibrary.cpp">
+      <Filter>Source Files\Libraries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Service\PhysXWrapper.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component\Collider.cpp">
+      <Filter>Source Files\Component</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ShaderData\DragonData.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\BasicShader.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\Component.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\ComponentType.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\Mesh.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\renderer.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\Texture.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\Transform.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Helpers\FunctionBindHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Helpers\GlewHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Helpers\GlutHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Plugins\Event.h">
+      <Filter>Header Files\Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Plugins\EventReceiver.h">
+      <Filter>Header Files\Plugins</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\camera.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Scene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\scenemanager.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\scenenode.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Scene\Skybox.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\ErrorManager.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\FileLoader.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\InputManager.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\Log.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\Service.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\servicelocator.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\ServiceType.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\TextureStorage.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\ThreadPool.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\Timer.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\TimerStorage.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\Tools.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\meshstorage.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\Serializer.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\ComponentElement\Material.h">
+      <Filter>Header Files\Component\ComponentElement</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Helpers\SDLHelper.h">
+      <Filter>Header Files\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Key.h" />
+    <ClInclude Include="Include\Libraries\InputLibrary.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Libraries\Library.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\LibraryManager.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Libraries\SDLLibrary.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Libraries\SDLPollEventLibrary.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Libraries\SDLWindow.h" />
+    <ClInclude Include="Include\Component\RenderCache.h" />
+    <ClInclude Include="Include\Helpers\STBIHelper.h" />
+    <ClInclude Include="Include\Libraries\TextureLibrary.h" />
+    <ClInclude Include="Include\Libraries\OpenGLLibrary.h" />
+    <ClInclude Include="Include\Libraries\RenderLibrary.h" />
+    <ClInclude Include="Include\Service\MeshObject.h" />
+    <ClInclude Include="Include\Libraries\GLRenderLibrary.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Libraries\GLTextureLibrary.h">
+      <Filter>Header Files\Libraries</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Service\PhysXWrapper.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Component\Collider.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DllExport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{67f006bb-d1c0-446e-b53f-6cf2ee636ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a459801e-c330-4ca1-a5d8-ccac66535fe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services">
+      <UniqueIdentifier>{8e9bd275-4313-42d2-a146-b89377ead910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services">
+      <UniqueIdentifier>{734d3dde-7346-4306-916c-bbfbd13eb77c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{8f11b174-4bee-49ae-ad21-71efe7fc81a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Plugins">
+      <UniqueIdentifier>{86bdced5-d98e-4f7f-96dc-51bac60b0fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{ecf850e8-85ef-4b16-8a66-005d95d4ca89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{a3033f0a-15e8-4612-abd6-6065001ac2be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plugins">
+      <UniqueIdentifier>{3480fb99-28d3-44f6-bbb1-d31e29bd1973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{ca27d4b6-ff1c-4183-bd71-43cd1c0c28e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component">
+      <UniqueIdentifier>{fe837f88-86bf-46f6-82e5-6a2835c0f310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component">
+      <UniqueIdentifier>{8457f922-0626-488c-872a-e4701cf55c6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{e59e0591-e59f-4377-b143-cc228442b8da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\ComponentElement">
+      <UniqueIdentifier>{8210a553-1c42-4181-aad8-8e0b6655fa81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\ComponentElement">
+      <UniqueIdentifier>{e4d7f697-4937-4862-9ea9-ef2189412880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Libraries">
+      <UniqueIdentifier>{65e904da-e527-4b3f-9b02-1d0f5aeed765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Libraries">
+      <UniqueIdentifier>{5b75f5a9-2d26-41e2-ad32-2078f620a8cc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{67f006bb-d1c0-446e-b53f-6cf2ee636ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{a459801e-c330-4ca1-a5d8-ccac66535fe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services">
+      <UniqueIdentifier>{8e9bd275-4313-42d2-a146-b89377ead910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services\Timer">
+      <UniqueIdentifier>{4df37e3a-ad28-4701-845a-532defcc5957}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services\Logger">
+      <UniqueIdentifier>{ca69db22-50c7-4d5d-96af-84a506d0ee7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services">
+      <UniqueIdentifier>{734d3dde-7346-4306-916c-bbfbd13eb77c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services\Logger">
+      <UniqueIdentifier>{8832839d-14c6-4a02-bfbd-1fe3f327b9df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services\Timer">
+      <UniqueIdentifier>{148ef705-9aba-452c-ab2c-9bb871efe11c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services\Error Manager">
+      <UniqueIdentifier>{4d185afb-ac59-4697-923f-f6caf3256fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services\File Management">
+      <UniqueIdentifier>{2d41e30e-1c7b-4f4e-ac09-ae595e2ef1dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpers">
+      <UniqueIdentifier>{8f11b174-4bee-49ae-ad21-71efe7fc81a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services\InputManagement">
+      <UniqueIdentifier>{8f4d33b9-1d72-4b35-9f80-0131ee3daf9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Plugins">
+      <UniqueIdentifier>{86bdced5-d98e-4f7f-96dc-51bac60b0fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scene">
+      <UniqueIdentifier>{ecf850e8-85ef-4b16-8a66-005d95d4ca89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services\Error Manager">
+      <UniqueIdentifier>{2339e354-75bc-4167-aef1-9b47617ca220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services\File Management">
+      <UniqueIdentifier>{75f26766-72e7-4b6f-866c-be99e0aa1e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpers">
+      <UniqueIdentifier>{a3033f0a-15e8-4612-abd6-6065001ac2be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plugins">
+      <UniqueIdentifier>{3480fb99-28d3-44f6-bbb1-d31e29bd1973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{ca27d4b6-ff1c-4183-bd71-43cd1c0c28e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services\Input Management">
+      <UniqueIdentifier>{a9a2a069-d544-4d34-b001-2af6d4bf22c3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ShaderData\shader.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="ShaderData\shader.vs">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="ShaderData\SkyboxLatLong.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="ShaderData\SkyboxLatLong.vs">
+      <Filter>Shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>
